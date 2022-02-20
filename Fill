@@ -1,0 +1,12 @@
+// procedimiento para llenar
+void LLENAR (short Vect[], short CantF)
+{
+    // variables
+    short Indice_F;
+
+    for (Indice_F = 1; Indice_F <= CantF; Indice_F ++)
+    {
+        cout << "Ingrese la Edad ";
+        cin >> Vect [Indice_F]; 
+    }
+}
