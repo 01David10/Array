@@ -1,0 +1,110 @@
+# include <iostream>
+# include <string.h>
+# include <stdlib.h>
+
+using namespace std;
+
+// Parcial 2 de algoritmos y programacion 1 (David Correa Posada)
+
+// parametrizacion
+void LLENAR_MATRIZ (long [][4], int &, int &);
+void MOSTRAR_MATRIZ (long [][4], int &, int &);
+
+// programa principal
+int main ()
+{
+    // variables
+    int Opcion, Prueba_Adm [100], Prueba_Fin [100], Prueba_Tecn [100], Cont_P, Puntaje_Total [100], Puntaje_G [100], Puntaje_A [100], Puntaje_Mayor_G, Puntaje_Menor_G, Puntaje_Mayor_A, Puntaje_Menor_A, Cont_G, Cont_A, Cant_F, Cant_C, Cant_V, Estado, Vr_Buscar;
+	long Matriz [100][4], Cedula [100], Cedula_G [100], Cedula_A [100];
+    string Nuevo_A; 
+
+    cout << "Bienvenido al menu " << endl;
+    cout << "1. Captura de informacion " << endl;
+    cout << "2. Procesar informacion " << endl;
+    cout << "3. Aspirantes a cargo de gerente " << endl;
+    cout << "4. Aspirantes a cargo de administrador " << endl;
+    cout << "5. Estadisticas " << endl;
+    cout << "6. Terminar " << endl;
+
+    cout << "Seleccione su opcion ";
+	cin >> Opcion;
+
+    switch (Opcion)
+    {
+        case 1:
+            LLENAR_MATRIZ (Matriz, Cant_F, Cant_C);
+        break;
+    
+        case 2:
+
+        break;
+
+        case 3:
+
+        break;
+
+        case 4:
+
+        break;
+
+        case 5:
+
+        break;
+
+        default:
+        break;
+    }
+
+    return EXIT_SUCCESS;
+}
+
+// procedimiento para el llenado de la matriz
+void LLENAR_MATRIZ (long Matr [][4], int &CantF, int &CantC) 
+{
+    // Variables
+    int I_F, I_C;
+
+    cout << "ingrese la cantidad de filas ";
+    cin >> CantF;
+
+    CantC = 4;
+
+    for (I_F = 1; I_F <= CantF; I_F ++)
+    {
+        cout << "ingrese la cedula ";
+        cin >> Matr [I_F][0];
+    }
+
+    for (I_F = 1; I_F <= CantF; I_F ++)
+    {
+        cout << "ingrese el puntaje de la prueba de administracion ";
+        cin >> Matr [I_F][1];
+
+        cout << "ingrese el puntaje de la prueba de finanzas ";
+        cin >>  Matr [I_F][2];
+
+        cout << "ingrese el puntaje de la prueba tecnica ";
+        cin >> Matr [I_F][3];
+    }
+
+    MOSTRAR_MATRIZ (Matr, CantF, CantC);
+}
+
+// procedimiento para mostrar la matriz
+void MOSTRAR_MATRIZ (long Matr[][4], int &CantF, int &CantC)
+{
+    // Variables:
+	int I_F, I_C;
+
+    for (I_F = 1; I_F <= CantF; I_F ++)
+    {
+        cin >> Matr [I_F][0];
+
+        cin >> Matr [I_F][1];
+
+        cin >> Matr [I_F][2];
+
+        cin >> Matr [I_F][3];
+    }
+}
+
