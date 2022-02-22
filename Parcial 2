@@ -11,7 +11,7 @@ void LLENAR_MATRIZ (long [][4], int &, int &);
 void MOSTRAR_MATRIZ (long [][4], int &, int &);
 void LLENAR_VECTOR (long [][4], long [], int [], int [], long [], int [], long [], int, int, int &, int &);
 void ORDENAR_G (long [][4], long [], int [], int [], long [], int [], long [], int, int, int &, int &);
-
+void ORDENAR_A (long [][4], long [], int [], int [], long [], int [], long [], int, int, int &, int &);
 
 // programa principal
 int main ()
@@ -49,7 +49,7 @@ int main ()
             break;
 
             case 4:
-                
+                ORDENAR_A (Matriz, Cedula, Puntaje_Total, Puntaje_G, Cedula_G, Puntaje_A, Cedula_A, Cant_F, Cant_C, CantF_G, CantF_A);
             break;
 
             case 5:
@@ -232,5 +232,54 @@ void ORDENAR_G (long Matr [][4], long Cedu [], int PuntajeTotal [], int PuntajeG
     for (I_F = 1; I_F <= CantFG; I_F ++)
     {
         cout << PuntajeG [I_F] << endl;
+    }
+}
+
+// procedimiento para ordenar descendente (aspirantes a administrador)
+void ORDENAR_A (long Matr [][4], long Cedu [], int PuntajeTotal [], int PuntajeG [], long CedulaG [], int PuntajeA [], long CedulaA [], int CantF, int CantC, int &CantFG, int &CantFA)
+{
+    // variables
+    int I_F, I_F2, Aux;
+
+    cout << "Vector de la cedula de los aspirantes a administrador ordenado descendentemente: " << endl;
+
+    for (I_F = 1; I_F <= CantFA; I_F ++)
+    {
+        for (I_F2 = 1; I_F2 <= CantFA-1; I_F2 ++)
+        {
+            if (CedulaA [I_F2] < CedulaA [I_F2+1])  
+            {
+                Aux = CedulaA [I_F2];
+                CedulaA [I_F2] = CedulaA [I_F2+1];
+                CedulaA [I_F2+1] = Aux;
+            }
+        }
+    }
+
+    // mostrar el vector
+    for (I_F = 1; I_F <= CantFA; I_F ++)
+    {
+        cout << CedulaA [I_F] << endl;
+    }
+    
+    cout << "Vector del puntaje de los aspirantes a administrador ordenado descendentemente: " << endl;
+
+    for (I_F = 1; I_F <= CantFA; I_F ++)
+    {
+        for (I_F2 = 1; I_F2 <= CantFA-1; I_F2 ++)
+        {
+            if (PuntajeA [I_F2] < PuntajeA [I_F2+1])  
+            {
+                Aux = PuntajeA [I_F2];
+                PuntajeA [I_F2] = PuntajeA [I_F2+1];
+                PuntajeA [I_F2+1] = Aux;
+            }
+        }
+    }
+
+    // mostrar el vector
+    for (I_F = 1; I_F <= CantFA; I_F ++)
+    {
+        cout << PuntajeA [I_F] << endl;
     }
 }
