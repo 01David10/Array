@@ -1,0 +1,21 @@
+// procedimiento para ordenar ascendentemente (metodo burbuja)
+void ORDENAR_B (short Vect[], short CantF)
+{
+    // variables
+    short Indice_F, Indice_F2, Aux;
+
+    for (Indice_F = 1; Indice_F <= CantF; Indice_F ++)
+    {
+        for (Indice_F2 = 1; Indice_F2 <= CantF-1; Indice_F2 ++)
+        {
+            if (Vect [Indice_F2] > Vect [Indice_F2+1])  
+            {
+                Aux = Vect [Indice_F2];
+                Vect [Indice_F2] = Vect [Indice_F2+1];
+                Vect [Indice_F2+1] = Aux;
+            }
+        }
+    }
+}
+
+// cambiar solo CantF y Vect
