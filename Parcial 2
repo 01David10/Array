@@ -9,13 +9,15 @@ using namespace std;
 // parametrizacion
 void LLENAR_MATRIZ (long [][4], int &, int &);
 void MOSTRAR_MATRIZ (long [][4], int &, int &);
-void LLENAR_VECTOR (long [][4], long [], int [], int [], long [], int [], long [], int, int);
+void LLENAR_VECTOR (long [][4], long [], int [], int [], long [], int [], long [], int, int, int &, int &);
+void ORDENAR_G (long [][4], long [], int [], int [], long [], int [], long [], int, int, int &, int &);
+
 
 // programa principal
 int main ()
 {
     // variables
-    int Opcion, Prueba_Adm [100], Prueba_Fin [100], Prueba_Tecn [100], Cont_P, Puntaje_Total [100], Puntaje_G [100], Puntaje_A [100], Puntaje_Mayor_G, Puntaje_Menor_G, Puntaje_Mayor_A, Puntaje_Menor_A, Cont_G, Cont_A, Cant_F, Cant_C, Cant_V, Estado, Vr_Buscar;
+    int Opcion, Prueba_Adm [100], Prueba_Fin [100], Prueba_Tecn [100], Cont_P, Puntaje_Total [100], Puntaje_G [100], Puntaje_A [100], Puntaje_Mayor_G, Puntaje_Menor_G, Puntaje_Mayor_A, Puntaje_Menor_A, Cont_G, Cont_A, Cant_F, Cant_C, Cant_V, Estado, Vr_Buscar, CantF_G, CantF_A;
 	long Matriz [100][4], Cedula [100], Cedula_G [100], Cedula_A [100];
     string Nuevo_A; 
 
@@ -39,15 +41,15 @@ int main ()
             break;
         
             case 2:
-                LLENAR_VECTOR (Matriz, Cedula, Puntaje_Total, Puntaje_G, Cedula_G, Puntaje_G, Cedula_G, Cant_F, Cant_C);
+                LLENAR_VECTOR (Matriz, Cedula, Puntaje_Total, Puntaje_G, Cedula_G, Puntaje_A, Cedula_A, Cant_F, Cant_C, CantF_G, CantF_A);
             break;
 
             case 3:
-
+                ORDENAR_G (Matriz, Cedula, Puntaje_Total, Puntaje_G, Cedula_G, Puntaje_A, Cedula_A, Cant_F, Cant_C, CantF_G, CantF_A);
             break;
 
             case 4:
-
+                
             break;
 
             case 5:
@@ -107,7 +109,7 @@ void MOSTRAR_MATRIZ (long Matr[][4], int &CantF, int &CantC)
 }
 
 // procedimiento para llenar los vectores
-void LLENAR_VECTOR (long Matr [][4], long Cedu [], int PuntajeTotal [], int PuntajeG [], long CedulaG [], int PuntajeA [], long CedulaA [], int CantF, int CantC)
+void LLENAR_VECTOR (long Matr [][4], long Cedu [], int PuntajeTotal [], int PuntajeG [], long CedulaG [], int PuntajeA [], long CedulaA [], int CantF, int CantC, int &CantFG, int &CantFA)
 {
 	int I_F, I_C, I_F2;
 
@@ -124,6 +126,8 @@ void LLENAR_VECTOR (long Matr [][4], long Cedu [], int PuntajeTotal [], int Punt
             CedulaG [I_F2] = Matr [I_F][0];
             cout << CedulaG [I_F2] << endl;
 
+            // vector con tamaño diferente
+            CantFG = I_F2;
             I_F2 = I_F2 + 1;
         }
     }
@@ -158,6 +162,8 @@ void LLENAR_VECTOR (long Matr [][4], long Cedu [], int PuntajeTotal [], int Punt
             CedulaA [I_F2] = Matr [I_F][0];
             cout << CedulaA [I_F2] << endl;
 
+            // vector con tamaño diferente
+            CantFA = I_F2;
             I_F2 = I_F2 + 1;
         }
     }
@@ -180,5 +186,51 @@ void LLENAR_VECTOR (long Matr [][4], long Cedu [], int PuntajeTotal [], int Punt
     }
 }
 
-// 
+// procedimiento para ordenar ascendente (aspirantes a gerente)
+void ORDENAR_G (long Matr [][4], long Cedu [], int PuntajeTotal [], int PuntajeG [], long CedulaG [], int PuntajeA [], long CedulaA [], int CantF, int CantC, int &CantFG, int &CantFA)
+{
+    // variables
+    int I_F, I_F2, Aux;
 
+    cout << "Vector de la cedula de los aspirantes a gerente ordenado ascendentemente: " << endl;
+
+    for (I_F = 1; I_F <= CantFG; I_F ++)
+    {
+        for (I_F2 = 1; I_F2 <= CantFG-1; I_F2 ++)
+        {
+            if (CedulaG [I_F2] > CedulaG [I_F2+1])  
+            {
+                Aux = CedulaG [I_F2];
+                CedulaG [I_F2] = CedulaG [I_F2+1];
+                CedulaG [I_F2+1] = Aux;
+            }
+        }
+    }
+
+    // mostrar el vector
+    for (I_F = 1; I_F <= CantFG; I_F ++)
+    {
+        cout << CedulaG [I_F] << endl;
+    }
+    
+    cout << "Vector del puntaje de los aspirantes a gerente ordenado ascendentemente: " << endl;
+
+    for (I_F = 1; I_F <= CantFG; I_F ++)
+    {
+        for (I_F2 = 1; I_F2 <= CantFG-1; I_F2 ++)
+        {
+            if (PuntajeG [I_F2] > PuntajeG [I_F2+1])  
+            {
+                Aux = PuntajeG [I_F2];
+                PuntajeG [I_F2] = PuntajeG [I_F2+1];
+                PuntajeG [I_F2+1] = Aux;
+            }
+        }
+    }
+
+    // mostrar el vector
+    for (I_F = 1; I_F <= CantFG; I_F ++)
+    {
+        cout << PuntajeG [I_F] << endl;
+    }
+}
