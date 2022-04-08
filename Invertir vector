@@ -1,0 +1,4 @@
+    for (I = 12; I >= 1; I --)
+    {
+        cout << Vector[I] << endl;
+    }
