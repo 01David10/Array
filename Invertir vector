@@ -1,4 +1,6 @@
-    for (I = 12; I >= 1; I --)
-    {
-        cout << Vector[I] << endl;
-    }
+for (I = 12; I >= 1; I --)
+{
+    cout << Vector[I] << endl;
+}
+
+// solo se reemplaza vector por el nombre de otro vector
