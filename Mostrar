@@ -1,7 +1,12 @@
- // mostrar el vector
-    for (I_F = 1; I_F <= CantF; I_F ++)
+// procedimiento para mostrar
+void MOSTRAR (short C[], short N)
+{
+    // variables
+    short I_F;
+
+    for (I_F = 1; I_F <= N; I_F ++)
     {
         cout << CedulaG [I_F] << endl;
     }
     
-// solo se cambia CantF por el tamaño del vector y CedulaG por otro vector
+// solo se cambia N por el tamaño del vector y CedulaG por otro vector
