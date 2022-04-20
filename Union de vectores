@@ -1,0 +1,19 @@
+// procedimiento para unir 2 vectores
+void UNION (short A[], short B[], short C[], short &N, short &M)
+{
+    // variables
+    short Indice_F, Indice_B;
+
+    Indice_B = 1;
+
+    for (Indice_F = 1; Indice_F <= N; Indice_F ++)
+    {
+        C[Indice_F] = A[Indice_F];
+    }
+
+    for (Indice_F = N+1; Indice_F <= N+M; Indice_F ++)
+    {
+        C[Indice_F] = B[Indice_B];
+        Indice_B ++;
+    }
+}
