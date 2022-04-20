@@ -8,5 +8,5 @@ void MOSTRAR (short C[], short N)
     {
         cout << CedulaG [I_F] << endl;
     }
-    
+} 
 // solo se cambia N por el tamaño del vector y CedulaG por otro vector
