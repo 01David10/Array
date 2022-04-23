@@ -1,0 +1,25 @@
+// procedimiento para buscar
+void BUSCAR (short C[], short N, short M)
+{
+    // variables
+    short i, Vr_Buscar;
+
+    i = 1;
+
+    cout << "Ingrese el elemento que desea buscar: ";
+    cin >> Vr_Buscar;
+
+    while (i <= N+M && Vr_Buscar != C [i])
+    {
+        i = i + 1;
+    }
+
+    if (i <= N+M)
+    {
+        cout << "El elemento buscado se encuentra en la posicion: " << i;
+    }
+    else
+    {
+        cout << "El elemento buscado no se encuentra en el vector";
+    }
+}
