@@ -1,4 +1,4 @@
-// procedimiento para ordenar ascendentemente (metodo burbuja)
+// procedimiento para ordenar ascendentemente (burbuja)
 void ORDENAR_B (short C[], short N, short M)
 {
     // variables
@@ -17,8 +17,10 @@ void ORDENAR_B (short C[], short N, short M)
                 C [j+1] = Aux;
             }
         }
+    }
+
+    for (i = 1; i <= N+M; i ++)
+    {
         cout << C[i] << endl;
     }
 }
-
-// a veces falla (no se porque)
