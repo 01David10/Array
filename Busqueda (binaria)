@@ -1,0 +1,53 @@
+// funcion para busqueda binaria
+void BUSCAR_B (short C[], short N, short M)
+{
+    // variables
+    short Limite1, Limite2, Mitad, Vr_Buscar;
+    bool Vr_encontrado;
+
+    cout << "Ingrese el elemento que desea buscar: ";
+    cin >> Vr_Buscar;
+
+    if (N+M %2 == 0)
+    {
+        Limite1 = 1;
+    }
+    if (N+M %2 != 0)
+    {
+        Limite1 = 0;
+    }
+    
+    Limite2 = N+M;
+    Vr_encontrado = 0;
+
+    while ( (Limite1 <= Limite2) && (Vr_encontrado == 0) )
+    {
+        Mitad = ( (Limite1 + Limite2) / 2);
+
+        if (C [Mitad] == Vr_Buscar)
+        {
+            Vr_encontrado = 1;
+        }
+        else
+        {
+            if (Vr_Buscar < C [Mitad])
+            {
+                Limite2 = Mitad - 1;
+            }
+            else
+            {
+                Limite1 = Mitad + 1;
+            }
+        }
+    }
+    if (Vr_Buscar == C [Mitad])
+    {
+        cout << "El elemento buscado se encuentra en la posicion: " << (Mitad) << endl; 
+    }
+    else
+    {
+        cout << "El elemento buscado no se encuentra en el vector" << endl;
+    }
+}
+
+// solo se cambia el nombre del vector y de las variables (si es el caso)
