@@ -1,0 +1,31 @@
+// procedimiento para ordenar descendentemente (burbuja mejorado)
+void ORDENAR_BM (short C[], short N, short M)
+{
+    // variables
+    short Aux, paso, j, bandera, i;
+    
+    bandera = 1;
+
+    for (paso = 0; paso <= N+M-1 && bandera == 1; paso ++)
+    /* si en el paso anterior no hubo cambios se detiene ciclo */
+    {
+        bandera=0;
+        for (j = 1;j <= N+M-paso-1; j++)
+        /* las comparaciones van dismuyendo
+        a medida que se efectuan los pasos */
+        {
+            if (C [j] < C [j+1])
+            {
+                bandera=1; /* indica si se han realizados cambios o no */
+                Aux = C [j];
+                C [j]= C [j+1];
+                C [j+1]= Aux;
+            }
+        }
+    }
+
+    for (i = 1; i <= N+M; i ++)
+    {
+        cout << C[i] << endl;
+    }
+}
