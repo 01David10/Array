@@ -1,0 +1,26 @@
+// procedimiento para ordenar ascendentemente (baraja)
+void ORDENAR_BA (short C[], short N, short M)
+{
+    // insertar un elemento del arreglo en la parte izquierda del mismo, que ya se encuentra ordenada. Este proceso se repite desde el segundo hasta el n-esimo elemento. 
+
+    // variables
+    short Aux, j, i;
+
+    for (i = 1; i <= N+M; i++)
+    {
+        Aux = C [i];
+        j = i-1;
+
+        while (j >= 1 && C [j] > Aux)
+        {
+            C [j+1] = C [j];
+            j--;
+        }
+        C [j+1] = Aux;
+    }
+
+    for (i = 1; i <= N+M; i ++)
+    {
+        cout << C[i] << endl;
+    }
+}
