@@ -1,0 +1,20 @@
+// procedimiento para insertar (sin ordenar)
+void INSERTAR (short C[], short &Tamaño)
+{
+    // variables
+    short Vr_Insertar, i;
+
+    cout << "Ingresa el valor que desea insertar: ";
+    cin >> Vr_Insertar;
+
+    Tamaño = Tamaño + 1;
+    C [Tamaño] = Vr_Insertar;
+
+    // mostrar vector
+    for (i = 1; i <= Tamaño; i ++)
+    {
+        cout << C[i] << endl;
+    }
+}
+
+// mirar si efectivamente estoy trayendo tamaño de otro subprograma o del principal
