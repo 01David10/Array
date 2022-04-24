@@ -1,0 +1,29 @@
+// procedimiento para ordenar ascendentemente (seleccion)
+void ORDENAR_S (short C[], short N, short M)
+{
+    // encuentra el menor de todos los elementos del vector y lo intercambia con el que está en la primera posición. Luego el segundo mas pequeño, y así sucesivamente hasta ordenarlo todo
+
+    // variables
+    short Actual, Menor, j, Aux, i;
+ 
+    for (Actual = 1; Actual <= N+M - 1; Actual ++)
+    {
+        Menor = Actual;
+
+        for (j = Actual + 1; j <= N+M; j++)
+        {
+            if (C [j] < C [Menor])
+            {
+                Menor = j;
+                Aux = C [Actual];
+                C [Actual] = C [Menor];
+                C [Menor] = Aux;
+            }
+        }
+    }
+
+    for (i = 1; i <= N+M; i ++)
+    {
+        cout << C[i] << endl;
+    }
+}
