@@ -6,7 +6,7 @@ void MOSTRAR (short C[], short N)
 
     for (I_F = 1; I_F <= N; I_F ++)
     {
-        cout << CedulaG [I_F] << endl;
+        cout << CedulaG [I_F] << " ";
     }
 } 
 // solo se cambia N por el tamaño del vector y CedulaG por otro vector
