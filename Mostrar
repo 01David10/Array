@@ -10,3 +10,4 @@ void MOSTRAR (short Vector[], short N)
     }
 } 
 // solo se cambia N por el tamaño del vector y Vector por otro vector
+// muestra los resultados hacia un lado, si se quieren hacia abajo se pone endl en vez de " "
