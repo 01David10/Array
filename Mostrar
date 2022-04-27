@@ -1,12 +1,12 @@
 // procedimiento para mostrar
-void MOSTRAR (short C[], short N)
+void MOSTRAR (short Vector[], short N)
 {
     // variables
-    short I_F;
+    short i;
 
-    for (I_F = 1; I_F <= N; I_F ++)
+    for (i = 1; i <= N; i ++)
     {
-        cout << CedulaG [I_F] << " ";
+        cout << Vector [i] << " ";
     }
 } 
-// solo se cambia N por el tamaño del vector y CedulaG por otro vector
+// solo se cambia N por el tamaño del vector y Vector por otro vector
