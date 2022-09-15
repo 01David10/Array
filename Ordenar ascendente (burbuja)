@@ -12,8 +12,8 @@ void ORDENAR_B (short C[], short N, short M)
         {
             if (C [j] > C [j+1])  
             {
-                Aux = C [j];
-                C [j] = C [j+1];
+                Aux = C [j];            // guarda el dato en el auxiliar
+                C [j] = C [j+1];        // intercambio posicion
                 C [j+1] = Aux;
             }
         }
